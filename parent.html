@@ -1,11 +1,16 @@
 <html>
 	<body>
 
+	<script>
+		var iframeBody = document.getElementById('content').contentWindow.document.body; 
+		iframeHeight = iframeBody.scrollHeight; 
+		iframeWidth = iframeBody.scrollWidth; 
 
+	</script>
 
 
 	Test iFrame
-<iframe id="content" src="https://www.w3schools.com">
+<iframe id="content" src="https://www.viget.com/articles/using-javascript-postmessage-to-talk-to-iframes/">
   <p>Your browser does not support iframes.</p>
 </iframe>
 	</body>
