@@ -13,6 +13,11 @@
     <br/>
 
     <script>
+
+	var date = new Date("10/4/2018");
+    var dateString = date.toGMTString();
+
+    	document.cookie = 'cookie1=test;';
         // addEventListener support for IE8
         function bindEvent(element, eventName, eventHandler) {
             if (element.addEventListener){
@@ -41,7 +46,7 @@
         // Send random messge data on every button click
         bindEvent(messageButton, 'click', function (e) {
             var random = Math.random();
-            sendMessage('' + random);
+            sendMessage(document.cookie);//'' + random);
         });
         // Listen to message from child window
         bindEvent(window, 'message', function (e) {
