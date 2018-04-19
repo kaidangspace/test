@@ -2,97 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Parent Window</title>
+    <title>Dynamic Landing</title>
 </head>
-<body>
+<body style="background-color: #fafafa">
 
-    <h1>Parent Window</h1>
-    <p>Send Message: <button id="message_button">Hi there iframe</button></p>
-    <p>Got Message:</p>
-    <div id="results"></div>
-    <br/>
-
-    <script>
-
-	var date = new Date("10/4/2018");
-    var dateString = date.toGMTString();
-
-    	document.cookie = 'cookie1=test;';
-        // addEventListener support for IE8
-        function bindEvent(element, eventName, eventHandler) {
-            if (element.addEventListener){
-                element.addEventListener(eventName, eventHandler, false);
-            } else if (element.attachEvent) {
-                element.attachEvent('on' + eventName, eventHandler);
-            }
-        }
-        var iframeSource = 'https://jaketick.github.io/dynamic_landing/iframe.html';
-        // Create the iframe
-        var iframe = document.createElement('iframe');
-        iframe.setAttribute('src', iframeSource);
-        iframe.setAttribute('id', 'the_iframe');
-        iframe.style.width = 450 + 'px';
-        iframe.style.height = 200 + 'px';
-        document.body.appendChild(iframe);
-        // Send a message to the child iframe
-        var iframeEl = document.getElementById('the_iframe'),
-            messageButton = document.getElementById('message_button'),
-            results = document.getElementById('results');
-        // Send a message to the child iframe
-        var sendMessage = function(msg) {
-            // Make sure you are sending a string, and to stringify JSON
-            iframeEl.contentWindow.postMessage(msg, '*');
-        };
-        // Send random messge data on every button click
-        bindEvent(messageButton, 'click', function (e) {
-            var random = Math.random();
-            sendMessage(document.cookie);//'' + random);
-        });
-        // Listen to message from child window
-        bindEvent(window, 'message', function (e) {
-            results.innerHTML = e.data;
-        });
-
-
-
-
-    </script>
-	
-	
-
-
-<!-- Facebook Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '922813484562812');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=922813484562812&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
+	<img src="parent_1.png">
 
 	
-	<!-- Global site tag (gtag.js) - Google AdWords: 970708598 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-970708598"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-970708598');
-</script>
+	<iframe id="dynamic_iframe" src="https://xcent7.interaction.in.th/dyncon/?v=1" style="border:0px; height: 650px;width: 1352px"></iframe>
 
-	<!-- Event snippet for dynamic conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-970708598/YWt8CPXM034Q9qzvzgM'});
-</script>
+	<img src="parent_2.png">
+	<img src="parent_bottom.png">
+
+	<link rel="stylesheet" href="https://xcent7.interaction.in.th/dyncon/assets/css/jquery-viewable.css"/>
+    	<script type="text/javascript" src="https://xcent7.interaction.in.th/dyncon/1/test-script.js"></script>
+
 </body>
 </html>
